@@ -10,7 +10,9 @@ def get_moves(state):
         if not t3 or n1 < t3[-1]: 
             moves.append([t1,t2,t3+[n1]])
         
-        t1.append(n1) # this appends n1 to both t1s above
+        t1.append(n1)  # this doesn't work
+        t1 = t1 + [n1] # this does work
+        
     if t2: 
         n2 = t2.pop(-1) 
         if not t1 or n2 < t1[-1]: 
