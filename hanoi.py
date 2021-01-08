@@ -28,8 +28,6 @@ def get_moves(state):
             moves.append([t1,t2+[n3],t3])
         t3.append(n3)
         
-        
-    #print(moves)
     return moves
 
 
@@ -40,13 +38,13 @@ def hanoi(n):
     
     visited = []
     while(queue):
-        p = queue.pop(0) # [(t1,t2,t3)]
-        state = p[-1]    # (t1,t2,t3)  
+        p = queue.pop(0) 
+        state = p[-1]   
         
-        if state[2] == final_state: # 
+        if state[2] == final_state:  
             return p
         else:
-            succs = get_moves(state) # t1,t2,t3
+            succs = get_moves(state) 
             for s in succs:
                 if s not in visited:
                     queue.append(p+[s])
